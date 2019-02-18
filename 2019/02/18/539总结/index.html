@@ -124,7 +124,7 @@ A题意：给定数轴上有n个连续的点，坐标为1,2,3…,n。之后你�
 <meta property="og:description" content="这场题简单的题做得都还开心，难题是真的自闭233333
 A题意：给定数轴上有n个连续的点，坐标为1,2,3…,n。之后你驾车从1号点开始出发。一开始你的油箱为空，然后你可以在途中加油，油箱的容积为$v$,在点$i$加一升油的代价为$i$。问你最后至少需要多少代价才能到达终点。数据量:$2 \le n \le 100,1 \le v \le 100$
 分析:感觉自己的贪心功力还是太弱了。简单题对着分">
-<meta property="og:updated_time" content="2019-02-18T11:49:41.391Z">
+<meta property="og:updated_time" content="2019-02-18T12:29:39.196Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="codeforces Round 539(div 2)总结">
 <meta name="twitter:description" content="这场题简单的题做得都还开心，难题是真的自闭233333
@@ -381,7 +381,7 @@ A题意：给定数轴上有n个连续的点，坐标为1,2,3…,n。之后你�
 </blockquote>
 <p>首先我们枚举从点A到点B的路径数量，很显然路径长度是小于等于min(n-1,m)的,记为$edge$</p>
 <p>1.路径上共有($edge+1$)个点，除去A,B外还有$edge-1$个点，选出这些点并排列的方案数为$A_{n-2}^{edge-1}$</p>
-<p>2.给$edge$条路径赋值使得其和加起来为m即为经典的小球投盒问题,方案为$C_{edge-1}^{m-1}$</p>
+<p>2.给$edge$条路径赋值使得其和加起来为m即为经典的小球投盒问题,方案为$C_{m-1}^{edge-1}$</p>
 <p>3.对于不在这条链上的其余边，即为在$[1,m]$上选择一个权值，即为$m^{n-edge-1}$</p>
 <p>4.此时图中的连通分量大小为$edge+1$,故生成树的个数为$(edge+1)*n^{n-edge}$</p>
 <p>综上，对于固定的edge，生成树个数为上述四项的乘积</p>
