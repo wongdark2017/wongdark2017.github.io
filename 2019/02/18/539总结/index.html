@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+
+    
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Roboto Slab:300,300italic,400,400italic,700,700italicCalibri:300,300italic,400,400italic,700,700italicConsolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="codeforces," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这场题简单的题做得都还开心，难题是真的自闭233333
+A题意：给定数轴上有n个连续的点，坐标为1,2,3…,n。之后你驾车从1号点开始出发。一开始你的油箱为空，然后你可以在途中加油，油箱的容积为$v$,在点$i$加一升油的代价为$i$。问你最后至少需要多少代价才能到达终点。数据量:$2 \le n \le 100,1 \le v \le 100$
+分析:感觉自己的贪心功力还是太弱了。简单题对着分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="codeforces Round 539(div 2)总结">
+<meta property="og:url" content="wongdark2017.github.io/2019/02/18/539总结/index.html">
+<meta property="og:site_name" content="菜鸡的赛后护理">
+<meta property="og:description" content="这场题简单的题做得都还开心，难题是真的自闭233333
+A题意：给定数轴上有n个连续的点，坐标为1,2,3…,n。之后你驾车从1号点开始出发。一开始你的油箱为空，然后你可以在途中加油，油箱的容积为$v$,在点$i$加一升油的代价为$i$。问你最后至少需要多少代价才能到达终点。数据量:$2 \le n \le 100,1 \le v \le 100$
+分析:感觉自己的贪心功力还是太弱了。简单题对着分">
+<meta property="og:updated_time" content="2019-02-18T11:49:41.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="codeforces Round 539(div 2)总结">
+<meta name="twitter:description" content="这场题简单的题做得都还开心，难题是真的自闭233333
+A题意：给定数轴上有n个连续的点，坐标为1,2,3…,n。之后你驾车从1号点开始出发。一开始你的油箱为空，然后你可以在途中加油，油箱的容积为$v$,在点$i$加一升油的代价为$i$。问你最后至少需要多少代价才能到达终点。数据量:$2 \le n \le 100,1 \le v \le 100$
+分析:感觉自己的贪心功力还是太弱了。简单题对着分">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="wongdark2017.github.io/2019/02/18/539总结/"/>
+
+
+
+
+
+  <title>codeforces Round 539(div 2)总结 | 菜鸡的赛后护理</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">菜鸡的赛后护理</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">虽千万人逆我之，我仍执着</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wongdark2017.github.io/2019/02/18/539总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wongdark2017">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/photo.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸡的赛后护理">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">codeforces Round 539(div 2)总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-18T17:32:10+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这场题简单的题做得都还开心，难题是真的自闭233333</p>
+<h1 id="A"><a href="#A" class="headerlink" title="A"></a>A</h1><p><strong>题意：</strong><br>给定数轴上有n个连续的点，坐标为1,2,3…,n。之后你驾车从1号点开始出发。一开始你的油箱为空，然后你可以在途中加油，油箱的容积为$v$,在点$i$加一升油的代价为$i$。问你最后至少需要多少代价才能到达终点。<br><br>数据量:$2 \le n \le 100,1 \le v \le 100$</p>
+<p><strong>分析:</strong><br>感觉自己的贪心功力还是太弱了。简单题对着分析了一阵。既然越靠前的点我们的代价越低，那么我们就尽量在前面加满油，保证最后的$[n-v+1,n]$不需要加油即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e5</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x3f3f3f3f3f</span>;</div><div class="line"><span class="keyword">int</span> n,v;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;v;</div><div class="line">    <span class="keyword">if</span>(v&gt;=n<span class="number">-1</span>) <span class="built_in">cout</span>&lt;&lt;n<span class="number">-1</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> cost=v;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n-v;i&gt;=<span class="number">2</span>;i--)</div><div class="line">        cost+=i;</div><div class="line">        <span class="built_in">cout</span>&lt;&lt;cost;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="B"><a href="#B" class="headerlink" title="B"></a>B</h1><p><strong>题意:</strong><br>给出n个数$a_1,a_2,a_3…a_n$,你可以将其中某个数$a_i$除以其某个约数$x$,并将其余的某一个数$a_j$变成其$xa_j$.问经过这样操作后这些数和的最小值是多少。</p>
+<p>数据量:$2 \le n \le 5 \cdot 10^4,1 \le a_i \le 100$</p>
+<p><strong>分析:</strong><br>注意到本题积一定下问和最小会是多少。因而我们无论怎么选缩小的数，扩大倍数的数必定是n个数中的最小的数。而对于如何选数还有倍数或许可以贪心(?)但由于本题数据量较小，因而我们选择枚举每个数的约数即可。复杂度为$O(n*max(a_i))$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e5</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f</span>;</div><div class="line"><span class="keyword">int</span> n;</div><div class="line">ll a[maxn];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">   <span class="built_in">cin</span>&gt;&gt;n;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">   <span class="built_in">cin</span>&gt;&gt;a[i];</div><div class="line">   sort(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</div><div class="line">   ll sum=accumulate(a+<span class="number">1</span>,a+n+<span class="number">1</span>,<span class="number">0</span>);</div><div class="line">   ll ans=inf;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;i--)</div><div class="line">   &#123;</div><div class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=a[i];j++)</div><div class="line">       &#123;</div><div class="line">           <span class="keyword">if</span>(a[i]%j==<span class="number">0</span>)</div><div class="line">           &#123;</div><div class="line">               ll tmp=sum-(a[i]-a[i]/j)+(a[<span class="number">1</span>]*j-a[<span class="number">1</span>]);</div><div class="line">               ans=min(ans,tmp);</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="C"><a href="#C" class="headerlink" title="C"></a>C</h1><p><strong>题意：</strong><br>给出$n$个数$a_1,a_2,a_3…a_n$,问有多少段长度为偶数的区间，使得前一半的数的异或值等于后一半的异或值。<br><br>数据量：$2 \le n \le 3 \cdot 10^5,0 \le a_i &lt; 2^{20}$</p>
+<p><strong>分析:</strong><br>异或值相等很容易转换成前缀和然后找前缀和相等且奇偶性相同的区间即可<br><br>因而我们可以在处理前缀和的时候建立前缀和-数量的键值对，然后遍历一遍记得到答案。注意零个数的前缀和为0.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e5</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f</span>;</div><div class="line"><span class="keyword">int</span> n;</div><div class="line"><span class="keyword">int</span> a[maxn];</div><div class="line"><span class="keyword">int</span> sum[maxn];</div><div class="line"><span class="keyword">int</span> tmp[maxn];</div><div class="line"><span class="built_in">map</span>&lt;ll,ll&gt; even,odd;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</div><div class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</div><div class="line">    <span class="built_in">cin</span>&gt;&gt;n;</div><div class="line">    odd[<span class="number">0</span>]++;<span class="comment">//偶数时因为第0项为0，应插入</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">    &#123;</div><div class="line">     <span class="built_in">cin</span>&gt;&gt;a[i];</div><div class="line">     sum[i]=sum[i<span class="number">-1</span>]^a[i];</div><div class="line">     <span class="keyword">if</span>(i&amp;<span class="number">1</span>) even[sum[i]]++;</div><div class="line">     <span class="keyword">else</span> odd[sum[i]]++;</div><div class="line">    &#125;</div><div class="line">    ll ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> it:even)</div><div class="line">    &#123;</div><div class="line">        ll x=it.first,y=it.second;</div><div class="line">        <span class="keyword">if</span>(y&gt;<span class="number">1</span>) ans+=y*(y<span class="number">-1</span>)/<span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> it:odd)</div><div class="line">    &#123;</div><div class="line">        ll x=it.first,y=it.second;</div><div class="line">        <span class="keyword">if</span>(y&gt;<span class="number">1</span>) ans+=y*(y<span class="number">-1</span>)/<span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="D"><a href="#D" class="headerlink" title="D"></a>D</h1><p><strong>题意:</strong><br>给定一个回文串，问你至少将字符串分成多少部分，使得他们进行重新拼接后(切割后的字符串不能颠倒顺序)可以组成不同于原来字符串的新回文串。如果不能输出”Impossible”.<br><br>数据量:(记字符串为s,$1 \le |s| \le 5\,000$)</p>
+<p><strong>分析:</strong><br><br>很有趣的一道题目。<br><br>首先我们考虑何时不可能。当字符串全为同一个字母，或者字符串为奇数个的时候，前缀$[1,…mid-1]$与后缀$[mid+1…n]$个数相等的时候显然不可能切出来。<br><br>再考虑最多需要分成多少部分。记最长的前缀为$[1…len]$,最长的后缀为$[n-len-1…n]$.显然前缀与后缀互为颠倒串(即$reverse(pref)=suff$)因而只要两个不相等即可。因而最多只需要分成三块。<br><br>那么有没有可能分成两块？ 我们不得而知，需要暴力去尝试了23333333<br><br>总之，回文串的题目要多利用回文串的对称性（奇串中心对称，偶串轴对称），去积极发现一些推论和结论，然后利用这些来作为线索破解题目。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC diagnostic <span class="meta-keyword">error</span> <span class="meta-string">"-std=c++11"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5e5</span> + <span class="number">5</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x3f3f3f3f3f</span>;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">is_any_answer</span><span class="params">(<span class="built_in">string</span> s)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ass=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)</div><div class="line">    &#123;</div><div class="line">        ass+=(s[i]!=s[<span class="number">0</span>]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ass&gt;<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalidrome</span><span class="params">(<span class="built_in">string</span> s)</span></span></div><div class="line">&#123;</div><div class="line">    ll n=s.length();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n/<span class="number">2</span>;i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(s[i]!=s[n-i<span class="number">-1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="built_in">string</span> s)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">string</span> s1,s2;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;s.size();i++)</div><div class="line">    &#123;</div><div class="line">        s1.clear(),s2.clear();</div><div class="line">        s1=s.substr(<span class="number">0</span>,i);</div><div class="line">        s2=s.substr(i,s.length()-s1.length());</div><div class="line">        s2+=s1;</div><div class="line">       <span class="comment">// cout&lt;&lt;s1&lt;&lt;" "&lt;&lt;s2&lt;&lt;endl;</span></div><div class="line">        <span class="keyword">if</span>(isPalidrome(s2)&amp;&amp;s2!=s) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">string</span> s;</div><div class="line">    <span class="built_in">cin</span>&gt;&gt;s;</div><div class="line">    ll n=s.length();</div><div class="line">    <span class="keyword">if</span>(is_any_answer(s))</div><div class="line">        <span class="built_in">cout</span>&lt;&lt;solve(s)&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Impossible"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="E"><a href="#E" class="headerlink" title="E"></a>E</h1><p>to be continued…</p>
+<h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><p><strong>题意：</strong><br>给出四个数$n,m,a,b$,问你能生成多少棵n个顶点的带边权的树，满足从顶点a到顶点b的路径的边权和为m<br><br><br>数据量:$2 \le n \le 10^6,1 \le m \le 10^6,1 \le a, b \le n,a \neq b$,结果对$10^9+7$取模</p>
+<p><strong>分析：</strong><br><br>先介绍Cayley’s formula:<br></p>
+<blockquote>
+<p>给定一个图，n个顶点,其中包含一个k连通分量。则生成树的个数为：<br>$T_{n,k}=kn^{n-k-1}$</p>
+</blockquote>
+<p>首先我们枚举从点A到点B的路径数量，很显然路径长度是小于等于min(n-1,m)的,记为$edge$</p>
+<p>1.路径上共有($edge+1$)个点，除去A,B外还有$edge-1$个点，选出这些点并排列的方案数为$A_{n-2}^{edge-1}$</p>
+<p>2.给$edge$条路径赋值使得其和加起来为m即为经典的小球投盒问题,方案为$C_{edge-1}^{m-1}$</p>
+<p>3.对于不在这条链上的其余边，即为在$[1,m]$上选择一个权值，即为$m^{n-edge-1}$</p>
+<p>4.此时图中的连通分量大小为$edge+1$,故生成树的个数为$(edge+1)*n^{n-edge}$</p>
+<p>综上，对于固定的edge，生成树个数为上述四项的乘积</p>
+<p>枚举edge累加即得答案<br></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</div><div class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span>+<span class="number">100</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x3f3f3f3f3f</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(ll &amp;a, ll b)</span></span></div><div class="line">&#123;</div><div class="line">    a += b;</div><div class="line">    <span class="keyword">if</span> (a &gt;= mod)</div><div class="line">        a -= mod;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">sub</span><span class="params">(ll &amp;a, ll b)</span></span></div><div class="line">&#123;</div><div class="line">    a -= b;</div><div class="line">    <span class="keyword">if</span> (a &lt; <span class="number">0</span>)</div><div class="line">        a += mod;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">mul1</span><span class="params">(ll a, ll b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> (ll)((ull)a * b % mod);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">mul2</span><span class="params">(ll a, ll b, ll x)</span></span></div><div class="line">&#123;</div><div class="line">    ll ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (b)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (b &amp; <span class="number">1</span>)</div><div class="line">            ans = (ans + a) % x;</div><div class="line">        b &gt;&gt;= <span class="number">1</span>, a = (a &lt;&lt; <span class="number">1</span>) % x;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">mpow</span><span class="params">(ll a, ll p)</span></span></div><div class="line">&#123;</div><div class="line">    ll res = <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(p&lt;<span class="number">0</span>) <span class="keyword">return</span> mpow(a,mod+p<span class="number">-1</span>);</div><div class="line">    <span class="keyword">if</span>(p==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(p==<span class="number">1</span>) <span class="keyword">return</span> a;</div><div class="line">    <span class="keyword">while</span> (p)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>)</div><div class="line">            res = res*a%mod;</div><div class="line">        p &gt;&gt;= <span class="number">1</span>;</div><div class="line">        a = a*a%mod;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div><div class="line"></div><div class="line">ll fac[maxn],fac_inv[maxn],inv[maxn];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">getinv</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">const</span> ll nn=<span class="number">1e6</span>;</div><div class="line">    fac[<span class="number">0</span>]=<span class="number">1</span>,fac[<span class="number">1</span>]=<span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=nn;i++)</div><div class="line">        fac[i]=fac[i<span class="number">-1</span>]*i%mod;</div><div class="line">    fac_inv[nn]=mpow(fac[nn],mod<span class="number">-2</span>);</div><div class="line">    <span class="keyword">for</span>(ll i=nn;i&gt;<span class="number">0</span>;i--)</div><div class="line">    fac_inv[i<span class="number">-1</span>]=fac_inv[i]*i%mod;</div><div class="line">    <span class="keyword">for</span>(ll i=<span class="number">1</span>;i&lt;=nn;i++)</div><div class="line">    inv[i]=fac_inv[i]*fac[i<span class="number">-1</span>]%mod;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    ll n,m,a,b;</div><div class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;a&gt;&gt;b;</div><div class="line">    getinv();</div><div class="line">    ll ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=min(n<span class="number">-1</span>,m);i++)</div><div class="line">    &#123;</div><div class="line">       ll ret=fac[n<span class="number">-2</span>]*fac_inv[n-i<span class="number">-1</span>]%mod*(i+<span class="number">1</span>)%mod*mpow(n,n-i<span class="number">-2</span>)%mod*fac[m<span class="number">-1</span>]</div><div class="line">       %mod*fac_inv[m-i]%mod*fac_inv[i<span class="number">-1</span>]%mod*mpow(m,n-i<span class="number">-1</span>)%mod;</div><div class="line">       ans+=ret;</div><div class="line">       ans%=mod;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/codeforces/" rel="tag"># codeforces</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/17/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/photo.gif"
+                alt="wongdark2017" />
+            
+              <p class="site-author-name" itemprop="name">wongdark2017</p>
+              <p class="site-description motion-element" itemprop="description">ACM、Algorithm</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wongdark2017" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="a123154@yeah.net" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://zhuanlan.zhihu.com/c_156489997" target="_blank" title="Zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.haolovej.com/" title="Bocity学长" target="_blank">Bocity学长</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://xanderxu.com/" title="Xander学长" target="_blank">Xander学长</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.wrzzing.cn/" title="Wrzz学长" target="_blank">Wrzz学长</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="211.159.148.98:8360/" title="XLS" target="_blank">XLS</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/hua-dong/" title="fcy" target="_blank">fcy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/MingSD/" title="wxk" target="_blank">wxk</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A"><span class="nav-number">1.</span> <span class="nav-text">A</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B"><span class="nav-number">2.</span> <span class="nav-text">B</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C"><span class="nav-number">3.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D"><span class="nav-number">4.</span> <span class="nav-text">D</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E"><span class="nav-number">5.</span> <span class="nav-text">E</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#F"><span class="nav-number">6.</span> <span class="nav-text">F</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wongdark2017</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
